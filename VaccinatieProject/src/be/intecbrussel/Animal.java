@@ -35,6 +35,10 @@ public abstract class Animal implements Treatable, Vaccinateable{
         return animalNumber;
     }
 
+    public void setAnimalNumber(int animalNumber) {
+        this.animalNumber = animalNumber;
+    }
+
     public String getName() {return name;}
 
     public void setName(String name) {this.name = name;}
