@@ -39,7 +39,7 @@ public class AnimalShelter {
 
     //Sorteert dieren op oplopende leeftijd
     public void sortAnimalByAge(){
-       animals.stream()
+        animals.stream()
                 .sorted(Comparator.comparingInt(Animal::getAge))
                 .forEach(animal -> System.out.println(animal.getAge() + " jaar" + " - " + animal.getName()));
     }
