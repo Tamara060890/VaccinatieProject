@@ -14,7 +14,7 @@ public class AnimalShelter {
 
     //Voegt dier toe en wijst uniek diernummer toe
     public void addAnimal(Animal animal){
-        animal.animalNumber = animalId++;
+        animal.setAnimalNumber(animalId++);
         animals.add(animal);
     }
 
@@ -38,7 +38,7 @@ public class AnimalShelter {
     }
 
     //Sorteert dieren op oplopende leeftijd
-    public void sortAnimalByAge(){
+    public void sortAnimalsByAge(){
         animals.stream()
                 .sorted(Comparator.comparingInt(Animal::getAge))
                 .forEach(animal -> System.out.println(animal.getAge() + " jaar" + " - " + animal.getName()));
@@ -46,7 +46,7 @@ public class AnimalShelter {
 
     //Toont alle dieren in de shelter
     public void printAnimals(){
-        animals.stream().forEach(System.out::println);
+        animals.forEach(System.out::println);
     }
 
     //Print dieren die niet gevaccineerd zijn
@@ -77,7 +77,7 @@ public class AnimalShelter {
         for(Animal animal:animals){
             if(animal.getAnimalNumber() == number){
                 animal.treatAnimal();
-                System.out.println(getAnimalId()+ ". " + animal.getName() + " is behandeld.");
+                System.out.println(animal.getAnimalNumber() + ". " + animal.getName() + " is behandeld.");
             }
         }
     }
@@ -87,7 +87,7 @@ public class AnimalShelter {
         for(Animal animal: animals) {
             if (animal.getName().equalsIgnoreCase(name)) {
                 animal.treatAnimal();
-                System.out.println(getAnimalId() + ". " + animal.getName() + " is behandeld.");
+                System.out.println(animal.getAnimalNumber() + ". " + animal.getName() + " is behandeld.");
             }
         }
     }
