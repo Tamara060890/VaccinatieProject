@@ -21,7 +21,8 @@ public class App {
         shelter.sortAnimalsByName();
         System.out.println("--Dieren sorteren op dierennummer--");
         shelter.sortAnimals();
-        System.out.println("Er zijn " + shelter.countAnimals() + " dieren.");
+        System.out.println("--Aantal dieren in het asiel--");
+        System.out.println(shelter.countAnimals());
         System.out.println("--Zoek dier op naam--");
         System.out.println(shelter.findAnimal("Bello"));
         System.out.println("--Zoek dier met opgegeven diernummer--");
@@ -34,5 +35,15 @@ public class App {
         shelter.treatAnimal("Bello");
         System.out.println("--Toon het oudste dier--");
         System.out.println(shelter.findOldestAnimal());
+
+        System.out.println("--Nr 3 vaccineren tegen FLUE--");
+        // Vaccineren van het dier met nummer 1 tegen FLUE
+        Animal animal = shelter.findAnimal(2);
+        if (animal != null) {
+            animal.vaccinateAnimal(Disease.FLUE);
+            System.out.println(animal.getName() + " is gevaccineerd tegen FLUE.");
+        }
+        System.out.println("--Print dieren die niet gevaccineerd zijn--");
+        shelter.printAnimalsNotVaccinated(Disease.FLUE);
     }
 }
