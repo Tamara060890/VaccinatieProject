@@ -1,5 +1,6 @@
 package be.intecbrussel;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public abstract class Animal implements Treatable, Vaccinateable{
@@ -12,20 +13,26 @@ public abstract class Animal implements Treatable, Vaccinateable{
 
     //Constructors
     public Animal() {
+        this.isClean = false;
+        this.isVaccinated = new HashMap<>();
+        for (Disease d : Disease.values()){
+            isVaccinated.put(d,false);
+        }
     }
 
     public Animal(String name, int age) {
         this.name = name;
         this.age = age;
+        this.isClean = false;
+        this.isVaccinated = new HashMap<>();
+        for (Disease d : Disease.values()){
+            isVaccinated.put(d,false);
+        }
     }
 
     //Getters en Setters
     public int getAnimalNumber() {
         return animalNumber;
-    }
-
-    public void setAnimalNumber(int animalNumber) {
-        this.animalNumber = animalNumber;
     }
 
     public String getName() {return name;}
@@ -49,12 +56,12 @@ public abstract class Animal implements Treatable, Vaccinateable{
     public static void setAnimalId(int animalId) {Animal.animalId = animalId;}
 
     //Controleert of dier gevaccineerd voor opgegeven ziekte
-    public boolean isVaccinated(Disease d){return this.isVaccinated.getOrDefault(d, false);}
+    public boolean isVaccinated(Disease d){return isVaccinated.getOrDefault(d, false);}
 
     //Markeert dier als gevaccineerd voor opgegeven ziekte
     @Override
-    public void vaccinateAnimal(Disease disease) {
-        this.isVaccinated.put(disease, true);
+    public void vaccinateAnimal(Disease d) {
+        isVaccinated.put(d, true);
     }
 
     //Markeert dier als behandeld
