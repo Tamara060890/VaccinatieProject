@@ -7,11 +7,15 @@ public class App {
         AnimalShelter shelter = new AnimalShelter();
 
         shelter.addAnimal(new Cat("Minoes", 4));
-        shelter.addAnimal(new Monkey("George", 10));
-        shelter.addAnimal(new Dog("Bello", 6));
-        shelter.addAnimal(new Dog("Anny", 1));
+        shelter.addAnimal(new Cat("Pussy", 7));
         shelter.addAnimal(new Cat("Soni", 3));
+        shelter.addAnimal(new Monkey("George", 10));
         shelter.addAnimal(new Monkey("Milli", 8));
+        shelter.addAnimal(new Monkey("Sam", 5));
+        shelter.addAnimal(new Dog("Bello", 8));
+        shelter.addAnimal(new Dog("Anny", 1));
+        shelter.addAnimal(new Dog("Bony", 9));
+        shelter.addAnimal(new Dog("Rex", 3));
 
         System.out.println("--Alle dieren printen--");
         shelter.printAnimals();
@@ -22,7 +26,7 @@ public class App {
         System.out.println("--Dieren sorteren op dierennummer--");
         shelter.sortAnimals();
         System.out.println("--Aantal dieren in het asiel--");
-        System.out.println("E zijn " + shelter.countAnimals() + " dieren.");
+        System.out.println("Er zijn " + shelter.countAnimals() + " dieren.");
         System.out.println("--Zoek dier op naam--");
         System.out.println(shelter.findAnimal("Bello"));
         System.out.println("--Zoek dier met opgegeven diernummer--");
