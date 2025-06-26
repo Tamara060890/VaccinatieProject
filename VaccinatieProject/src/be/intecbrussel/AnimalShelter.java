@@ -27,7 +27,7 @@ public class AnimalShelter {
     public void sortAnimals(){
         animals.stream()
                 .sorted(Comparator.comparingInt(Animal::getAnimalNumber))
-                .forEach(animal -> System.out.println(animal.getAnimalNumber() + " - " + animal.getName() +" - " + animal.getAge() + " jaar"));
+                .forEach(animal -> System.out.println(animal.getAnimalNumber() + ". " + animal.getName() +" is " + animal.getAge() + " jaar"));
     }
 
     //Sorteert dieren alfabetisch op naam
