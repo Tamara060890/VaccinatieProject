@@ -22,7 +22,7 @@ public class App {
         System.out.println("--Dieren sorteren op dierennummer--");
         shelter.sortAnimals();
         System.out.println("--Aantal dieren in het asiel--");
-        System.out.println(shelter.countAnimals());
+        System.out.println("E zijn " + shelter.countAnimals() + " dieren.");
         System.out.println("--Zoek dier op naam--");
         System.out.println(shelter.findAnimal("Bello"));
         System.out.println("--Zoek dier met opgegeven diernummer--");
@@ -41,16 +41,16 @@ public class App {
         Animal animal = shelter.findAnimal(2);
         if (animal != null) {
             animal.vaccinateAnimal(Disease.FLUE);
-            System.out.println(animal.getName() + " is gevaccineerd tegen FLUE.");
+            System.out.println(animal.getAnimalNumber() + ". " + animal.getName() + " is gevaccineerd tegen FLUE.");
         }
 
-        System.out.println("--Nr 1, 2 en 5 vaccineren tegen POLIO--");
+        System.out.println("--Nr 1, 3 en 5 vaccineren tegen POLIO--");
         int[] animalNumbers = {1, 3, 5};
         for (int num : animalNumbers) {
             Animal a = shelter.findAnimal(num);
             if (a != null) {
                 a.vaccinateAnimal(Disease.POLIO);
-                System.out.println(a.getName() + " is gevaccineerd tegen POLIO.");
+                System.out.println(a.getAnimalNumber() + ". " + a.getName() + " is gevaccineerd tegen POLIO.");
             }
         }
         System.out.println("--Print dieren die niet gevaccineerd zijn tegen FLUE--");
