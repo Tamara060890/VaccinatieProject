@@ -8,10 +8,6 @@ public class AnimalShelter {
     private List<Animal> animals = new ArrayList<>();
     private int animalId = 1;
 
-    public int getAnimalId() {
-        return animalId;
-    }
-
     //Voegt dier toe en wijst uniek diernummer toe
     public void addAnimal(Animal animal){
         animal.setAnimalNumber(animalId++);
@@ -53,7 +49,7 @@ public class AnimalShelter {
     public void printAnimalsNotVaccinated(Disease disease){
         animals.stream()
                 .filter(animal -> !animal.isVaccinated(disease))
-                .forEach(System.out::println);
+                .forEach(animal -> System.out.println(animal.getAnimalNumber() + ". " + animal.getName() + " is niet gevaccineerd."));
     }
 
     //Zoekt dier met opgegeven diernummer
@@ -96,7 +92,7 @@ public class AnimalShelter {
     public void treatAllAnimals(){
         for(Animal animal: animals){
             animal.treatAnimal();
-            System.out.println(animal.getName() + " is behandeld.");
+            System.out.println(animal.getAnimalNumber() + ". " + animal.getName() + " is behandeld.");
         }
     }
 
