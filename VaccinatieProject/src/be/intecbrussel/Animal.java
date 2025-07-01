@@ -13,17 +13,17 @@ public abstract class Animal implements Treatable, Vaccinateable{
 
     //Constructors
     public Animal() {
-        this.isClean = false;
+        this.isClean = isClean;
         this.isVaccinated = new HashMap<>();
         for (Disease d : Disease.values()){
             isVaccinated.put(d,false);
         }
     }
 
-    public Animal(String name, int age) {
+    public Animal(String name, int age, boolean isClean) {
         this.name = name;
         this.age = age;
-        this.isClean = false;
+        this.isClean = isClean;
         this.isVaccinated = new HashMap<>();
         for (Disease d : Disease.values()){
             isVaccinated.put(d,false);
@@ -69,7 +69,6 @@ public abstract class Animal implements Treatable, Vaccinateable{
     }
 
     //Markeert dier als behandeld
-    @Override
     public void treatAnimal() {
         this.isClean = true;
     }
