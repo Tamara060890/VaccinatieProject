@@ -12,6 +12,10 @@ public class App {
         shelter.addAnimal(new Dog("Anny", 1, true, false));
         shelter.addAnimal(new Cat("Soni", 3, false, false));
         shelter.addAnimal(new Monkey("Milli", 8, true, true));
+        shelter.addAnimal(new Dog("Poly", 5, false, false));
+        shelter.addAnimal(new Monkey("Katty", 9, false, true));
+        shelter.addAnimal(new Monkey("sem", 2, true, true));
+        shelter.addAnimal(new Cat("Mosya", 7, true, false));
 
         System.out.println("--Alle dieren printen--");
         shelter.printAnimals();
