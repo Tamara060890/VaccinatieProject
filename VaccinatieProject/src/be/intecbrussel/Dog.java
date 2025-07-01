@@ -1,16 +1,16 @@
 package be.intecbrussel;
 
 public class Dog extends Animal {
-    private boolean hasFoulBreath = false;
+    private boolean hasFoulBreath;
 
-    public Dog(String name, int age) {
-        super(name, age);
+    public Dog(String name, int age, boolean isClean, boolean hasFoulBreath) {
+        super(name, age, isClean);
+        this.hasFoulBreath = hasFoulBreath;
     }
 
-    //hasLongNails = false, isClean = true
     @Override
     public void treatAnimal() {
+        super.treatAnimal();
         this.hasFoulBreath = false;
-        this.isClean = true;
     }
 }
